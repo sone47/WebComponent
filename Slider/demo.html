@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-touch-fullscreen" content="YES">
+	<meta name="apple-mobile-web-app-status-abr-style" content="black">
+	<title>Slider.js</title>
+	<link rel="stylesheet" type="text/css" href="Slider.css">
+</head>
+<body>
+	<!-- 外层画布 -->
+	<div id="canvas"></div>
+	<script src="Slider.js"></script>
+	<script type="text/javascript">
+		var list = [{
+			height: 241,
+			width: 115,
+			img: '1.png'
+		},{
+			height: 287,
+			width: 172,
+			img: '2.png'
+		},{
+			height: 296,
+			width: 253,
+			img: '3.png'
+		}];
+
+		new Slider({
+			wrap: document.getElementById('canvas'),
+			list: list,
+			width: window.innerWidth,
+			height: 200
+		});
+	</script>
+</body>
+</html>

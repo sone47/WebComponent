@@ -1,0 +1,53 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #ccc;
+	overflow: hidden;
+	height: 100%;
+}
+#canvas {
+	overflow: hidden;
+	background: #333;
+	width: 100%;
+	position: relative;
+}
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+}
+li img{
+	width: auto;
+	height: 100%;
+	display: block;
+}
+.swipe-btn {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 10%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.swipe-btn a.on {
+	background: #00a1d6;
+}
+.swipe-btn a {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin: 4px;
+	background: #fff;
+	float: left;
+}
