@@ -117,12 +117,10 @@ Slider.prototype.bindDOM = function() {
 		e.preventDefault();
 		e.stopPropagation();
 
-		var tidx = 0;
 		if(e.target.nodeName.toLowerCase() === 'a') {
 			var btns = self.wrap.getElementsByClassName('swipe-btn')[0].getElementsByTagName('a');
 			for(var j = 0; j < len; j++) {
 				if(btns[j] === e.target) {
-					tidx = j;
 					btns[j].className = 'on';
 					self.go(j);
 					continue;
@@ -197,6 +195,13 @@ Slider.prototype.go = function(n) {
 	var isNext = true;
 
 	if(typeof n === 'number') {
+		if(idx-n === len-1) {
+			return this.go('+1');
+		}
+		if(n-idx === len-1) {
+			return this.go('-1');
+		}
+
 		cidx = n;
 	} else if(typeof n === 'string') {
 		cidx = idx + n * 1;
