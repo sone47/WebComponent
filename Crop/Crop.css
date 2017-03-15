@@ -1,91 +1,91 @@
 #crop-demo-box img {
-	display: block;
+  display: block;
 }
 #crop-demo-box {
-	border: 1px solid #999;
-	border-radius: 5px;
-	padding: 10px;
-	display: flex;
-	align-items: center;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 #crop-demo-box .crop {
-	position: relative;
-	border: 1px solid #999;
-	background: #333;
+  position: relative;
+  border: 1px solid #999;
+  background: #333;
 }
 
 #crop-demo-box .crop .crop-container {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #crop-demo-box .crop .crop-container .crop-img {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 #crop-demo-box .crop .target-box {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 40%;
-	height: 40%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 40%;
 }
 
 #crop-demo-box .crop .target-container {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	overflow: hidden;
-	cursor: move;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: move;
 }
 
 #crop-demo-box .crop .target-container .target {
-	position: absolute;
-	top: 0;
-	left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #crop-demo-box .crop .target-box .target-resize {
-	width: 5%;
-	height: 5%;
-	background: #fff;
-	border-radius: 50%;
-	border: 1px solid #000;
-	position: absolute;
-	left: 80%;
-	top: 85%;
-	cursor: se-resize;
+  width: 5%;
+  height: 5%;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: absolute;
+  left: 80%;
+  top: 85%;
+  cursor: se-resize;
 }
 
 #crop-demo-box .preview {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 20px;
-	padding-bottom: 0;
-	margin-left: 20px;
-	background: #f2f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 0;
+  margin-left: 20px;
+  background: #f2f2f5;
 }
 
 #crop-demo-box .preview .preview-frame {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 #crop-demo-box .preview .circle-preview {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 #crop-demo-box .preview .square-preview {
-	
+  
 }
 
 #crop-demo-box .preview .show-size {
-	height: 30px;
-	width: 100%;
-	line-height: 30px;
-	color: #ccc;
-	font-size: 12px;
-	text-align: center;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  color: #ccc;
+  font-size: 12px;
+  text-align: center;
 }
