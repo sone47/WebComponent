@@ -1,2 +1,2 @@
 # WebComponents
-sone webcomponents wrote by native JavaScript.
+some webcomponents wrote by native JavaScript.
