@@ -23,15 +23,39 @@ new Slider({
   wrap: document.getElementById('canvas'),
   list: list,
   width: window.innerWidth,
-  height: 200
+  height: 200,
+  resizeDelay: {
+    type: 'throttle',
+    delay: 1000
+  }
 });
 ```
 
-| 参数名    | 参数类型           | 参数意义                                     |
-| ------ | -------------- | ---------------------------------------- |
-| wrap   | Element Object | 包裹组件中所有HTML元素的                           |
-| list   | Array          | 图片数组，其中item为Object，包含图片路径img，图片宽度img，图片高度height |
-| width  | Number         | 组件宽度                                     |
-| height | Number         | 组件高度                                     |
+| 参数名         | 参数类型           | 参数意义                                     |
+| ----------- | -------------- | ---------------------------------------- |
+| **wrap**    | Element Object | 包裹组件中所有HTML元素的                           |
+| **list**    | Array          | 图片数组，其中item为Object，包含图片路径img，图片宽度img，图片高度height |
+| **width**   | Number         | 组件宽度                                     |
+| **height**  | Number         | 组件高度                                     |
+| resizeDelay | Object         | 防止浏览器崩溃，可设置浏览器窗口大小变化时函数防抖或函数节流。          |
 
-以上所有参数都是必须的。
+粗体参数都是必须的。
+
+### resziDelay
+
+默认对象为
+
+```javascript
+{
+  type: 'throttle',
+  delay: 1000
+}
+```
+
+#### type
+
+参数：'throttle' 为函数节流，'debounce' 为函数防抖，当不设置或设置为其他值时表示不使用防抖或节流。
+
+#### delay
+
+参数为Number类型，表示函数 delay ms 后执行。

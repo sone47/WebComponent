@@ -3,6 +3,10 @@ function Slider(opts) {
   this.list = opts.list;
   this.width = opts.width;
   this.height = opts.height;
+  this.resizeDelay = opts.resizeDelay || {
+    type: 'throttle',
+    delay: 1000
+  };
 
   this.init();
   this.renderDOM();
@@ -159,17 +163,47 @@ Slider.prototype.bindDOM = function() {
   btn.addEventListener('click', btnHandler);
   this.wrap.addEventListener('mouseenter', enterHandler);
   this.wrap.addEventListener('mouseleave', leaveHandler);
-  window.addEventListener('resize', debounce(resizeHandler, 1000, self));
 
-  function debounce(fn, waitTime, context) {
-    var timeId = null;
-
-    return function() {
-      clearTimeout(timeId);
-
-      timeId = setTimeout(fn.bind(context), waitTime);
-    };
+  var delay = this.resizeDelay.delay;
+  switch(this.resizeDelay.type) {
+    case 'debounce':
+      window.addEventListener('resize', self.debounce(resizeHandler, delay, self));
+      break;
+    case 'throttle':
+      window.addEventListener('resize', self.throttle(resizeHandler, delay, self));
+      break;
+    default:
+      window.addEventListener('resize', resizeHandler.bind(this));
   }
+};
+
+Slider.prototype.debounce = function(fn, delay, context) {
+  var timeId = null;
+  context && (fn = fn.bind(context));
+
+  return function() {
+    clearTimeout(timeId);
+
+    timeId = setTimeout(fn, delay);
+  };
+};
+
+Slider.prototype.throttle = function(fn, delay, context) {
+  var timeId = null;
+  var startTime = new Date();
+  context && (fn = fn.bind(context));
+
+  return function() {
+    clearTimeout(timeId);
+    var curTime = new Date();
+
+    if(curTime - startTime > 500) {
+      fn();
+      startTime = curTime;
+    } else {
+      timeId = setTimeout(fn, delay);
+    }
+  };
 };
 
 Slider.prototype.autoPlay = function () {

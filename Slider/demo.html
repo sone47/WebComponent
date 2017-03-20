@@ -31,7 +31,11 @@
       wrap: document.getElementById('canvas'),
       list: list,
       width: window.innerWidth,
-      height: 200
+      height: 200,
+      resizeDelay: {
+        type: 'throttle',
+        delay: 1000
+      }
     });
   </script>
 </body>
